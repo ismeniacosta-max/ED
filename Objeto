@@ -1,0 +1,12 @@
+const celular = {
+    modelo: "G15",
+    marca: "Motorola",
+    ano: "2010",
+    cor: "cinza",
+    descrever(){
+       //console.log("O modelo do meu celular é",this.modelo)
+       console.log(`Modelo: ${this.modelo} - Marca: ${this.marca} - Ano: ${this.ano} - Cor: ${this.cor}`)
+    }
+}
+
+celular.descrever()
