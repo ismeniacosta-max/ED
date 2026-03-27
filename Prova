@@ -1,0 +1,67 @@
+const prompt = require("prompt-sync")();
+
+let tabuleiro = [
+    [0,0,0,0,0],
+    [0,0,0,0,0],
+    [0,0,0,0,0],
+    [0,0,0,0,0],
+    [0,0,0,0,0]
+]
+
+let navios = [
+    
+   {linha: Number(prompt("Diga uma linha: ")),coluna: Number(prompt("Diga uma coluna: "))},
+   {linha: Number(prompt("Diga uma linha: ")),coluna: Number(prompt("Diga uma coluna: "))},
+   {linha: Number(prompt("Diga uma linha: ")),coluna: Number(prompt("Diga uma coluna: "))}
+
+]
+
+for (let i = 0; i < navios.length; i++) {
+    let l = navios[i].linha;
+    let c = navios[i].coluna;
+    tabuleiro[l][c] = 1;
+}
+
+console.log("Tabuleiro inicial (1 = navio, 0 = água):");
+for (let i = 0; i < 5; i++) {
+    console.log(tabuleiro[i].join(" "));
+}
+
+let tiros = [
+    
+{linha: Number(prompt("Diga uma linha: ")),coluna: Number(prompt("Diga uma coluna: "))},
+{linha: Number(prompt("Diga uma linha: ")),coluna: Number(prompt("Diga uma coluna: "))},
+{linha: Number(prompt("Diga uma linha: ")),coluna: Number(prompt("Diga uma coluna: "))},
+{linha: Number(prompt("Diga uma linha: ")),coluna: Number(prompt("Diga uma coluna: "))},
+{linha: Number(prompt("Diga uma linha: ")),coluna: Number(prompt("Diga uma coluna: "))},
+{linha: Number(prompt("Diga uma linha: ")),coluna: Number(prompt("Diga uma coluna: "))},
+{linha: Number(prompt("Diga uma linha: ")),coluna: Number(prompt("Diga uma coluna: "))}
+
+
+];
+
+let acertos = 0;
+
+console.log("\n--- Resultados dos Tiros ---");
+for (let i = 0; i < tiros.length; i++) {
+    let l = tiros[i].linha;
+    let c = tiros[i].coluna;
+   
+    if (tabuleiro[l][c] === 1) {
+        console.log("Tiro", i+1, "- Posição (", l, ",", c, ") - ACERTOU!");
+        tabuleiro[l][c] = -1; // Marcar como já acertado
+        acertos++;
+    }
+    else if (tabuleiro[l][c] === -1) {
+        console.log("Tiro", i+1, "- Posição (", l, ",", c, ") - JÁ ACERTADO ANTES!");
+    }
+    else {
+        console.log("Tiro", i+1, "- Posição (", l, ",", c, ") - ÁGUA!");
+    }
+}
+
+console.log("\nTotal de acertos:", acertos);
+console.log("\nTabuleiro final (-1 = navio acertado):");
+for (let i = 0; i < 5; i++) {
+    console.log(tabuleiro[i].join(" "));
+}
