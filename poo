@@ -1,0 +1,27 @@
+class Produto {
+    constructor(nome, preco, disponivel) {
+        this.nome = nome;
+        this.preco = preco;
+        this.disponivel = disponivel;
+    }
+   
+      exibirInf() {
+     
+        console.log(this.nome + " — R$ " + this.preco.toFixed(2));
+        
+        if(this.disponivel == false){
+            console.log("Esgotado");
+    }
+      }
+        aplicarDesconto(percentual){
+           console.log(`Este é o valor do produto com desconto: R$ ${this.preco - ((percentual/100)*this.preco.toFixed(2))}`);
+        }
+       
+}
+
+const novop = new Produto("Maçã", 15.00)
+const novop1 = new Produto("Goiaba", 25.00)
+const novop2 = new Produto("Pera", 10.00)
+
+novop.aplicarDesconto(2)
+novop.exibirInf()
