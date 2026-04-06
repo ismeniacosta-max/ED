@@ -10,3 +10,38 @@ const celular = {
 }
 
 celular.descrever()
+
+
+Q4 - lista
+
+let produto = {
+  nome: "Notebook",
+  preco: 4599.99,
+  emEstoque: true,
+  desconto: 20,
+  imprimirNome() {
+    console.log(this.nome);
+  },
+  getPreco() {
+    let desconto = this.desconto / 100;
+    let preco = this.preco - this.preco * desconto;
+    return preco;
+  },
+  mostrarPreco() {
+    let desconto = this.desconto / 100;
+    let preco = this.preco - this.preco * desconto;
+    console.log(preco);
+  },
+  setDesconto(novoDesconto) {
+    novoDesconto = Number(novoDesconto)
+    if(novoDesconto>=0 && novoDesconto<=100){
+        novoDesconto = this.preco - this.preco * (novoDesconto/100)
+        console.log(`O novo valor é: R$ ${novoDesconto.toFixed(2)}`)
+    }else{
+        console.log("Valor inválido")
+    }
+  }
+};
+
+console.log(produto.getPreco());
+produto.setDesconto(100);
