@@ -45,3 +45,35 @@ let produto = {
 
 console.log(produto.getPreco());
 produto.setDesconto(100);
+
+q7 - lista
+
+class Faixa{
+    construtor(titulo, artista, duracaoSeg){
+        this.titulo = titulo
+        this.artista = artista
+        this.duracao = duracaoSeg
+        this.curtidas = 0 
+    }  
+     curtir() {
+    this.curtidas += 1;
+  }
+  descricao() {
+    let minutos = Math.trunc(this.duracao / 60);
+    let segundos = String(this.duracao % 60).padStart(2, "0");
+
+    console.log(`${this.titulo} - ${this.artista} (${minutos}:${segundos})`);
+  }
+
+}
+
+const f1 = new Faixa("HUMBLE.", "Kendrick Lamar", 177);
+const f2 = new Faixa("Blinding Lights", "The Weeknd", 200);
+console.log(f1.descricao()); // "HUMBLE. — Kendrick Lamar (2:57)"
+console.log(f2.descricao()); // "Blinding Lights — The Weeknd (3:20)"
+f1.curtir();
+f1.curtir();
+console.log(f1.curtidas); // 2
+
+
+
