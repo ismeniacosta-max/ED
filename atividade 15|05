@@ -1,0 +1,51 @@
+ exibir() {
+        console.log(this.itens)
+    }
+}
+
+
+
+class Aluno {
+    constructor(nome, matricula){
+        this.nome = nome
+        this.matricula = matricula
+    }
+}
+
+
+
+let aluno1 = new Aluno("Juan", 20250001)
+let aluno2 = new Aluno("Lucas", 20250002)
+let aluno3 = new Aluno("Lara", 20250003)
+let aluno4 = new Aluno("Carlos", 20250004)
+let aluno5 = new Aluno("Maria", 20250005)
+let aluno6 = new Aluno("Marina", 20250006)
+let aluno7 = new Aluno("Safira", 20250007)
+let aluno8 = new Aluno("Samuel", 20250008)
+let aluno9 = new Aluno("Isleide", 20250009)
+let aluno10 = new Aluno("Júlia", 20250010)
+
+
+let novaFila = new FilaAlunos()
+
+novaFila.enqueue(aluno1)
+novaFila.enqueue(aluno2)
+novaFila.enqueue(aluno3)
+novaFila.enqueue(aluno4)
+novaFila.enqueue(aluno5)
+novaFila.enqueue(aluno6)
+novaFila.enqueue(aluno7)
+novaFila.enqueue(aluno8)
+novaFila.enqueue(aluno9)
+novaFila.enqueue(aluno10)
+
+novaFila.exibir()
+
+novaFila.dequeue()
+novaFila.dequeue()
+novaFila.dequeue()
+novaFila.dequeue()
+
+novaFila.exibir()
+
+novaFila.isEmpty()
